@@ -1,0 +1,62 @@
+<div class="container">
+  <h1 class="page-title">Countries & Currencies</h1>
+  <a href="#" class="page-subtitle"
+    >You can easily manage your countries on this page</a
+  >
+
+  <div class="layout">
+    <div class="sidebar">
+      <button
+        pButton
+        class="p-button-primary add-country-btn"
+        (click)="showAddForm = !showAddForm"
+      >
+        {{ showAddForm ? "Hide Form" : "Add a country" }}
+      </button>
+    </div>
+
+    <div class="main-content">
+      <p-table [value]="countries" [tableStyle]="{ 'min-width': '50rem' }">
+        <ng-template pTemplate="header">
+          <tr>
+            <th class="column-header-m">Country</th>
+            <th class="column-header-m">Population</th>
+            <th class="column-header-m">Continent</th>
+            <th class="column-header-s">Status</th>
+            <th class="column-header-s">Maps</th>
+          </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-country>
+          <tr>
+            <td class="country-name">
+              <div class="flag-container">
+                <img
+                  [src]="country.flag"
+                  [alt]="country.name"
+                  class="flag-img"
+                />
+                <div>
+                  <div>{{ country.name }}</div>
+                  <div class="currency-code">{{ country.currencyCode }}</div>
+                </div>
+              </div>
+            </td>
+            <td class="text-right">{{ country.population }}</td>
+            <td>{{ country.continent }}</td>
+            <td>
+              <i
+                class="pi pi-check-circle status-icon"
+                *ngIf="country.active"
+              ></i>
+            </td>
+            <td>
+              <a [href]="country.mapsUrl" target="_blank">
+                <i class="pi pi-globe maps-icon"></i>
+              </a>
+            </td>
+          </tr>
+        </ng-template>
+      </p-table>
+    </div>
+  </div>
+</div>
