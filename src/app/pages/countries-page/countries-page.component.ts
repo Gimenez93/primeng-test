@@ -1,7 +1,7 @@
 import { Component } from "@angular/core";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { ButtonModule } from "primeng/button";
-import { Country, CountryService } from "./country.service";
+import { Country, CountriesPageService } from "./countries-page.service";
 import { TableModule } from "primeng/table";
 import { CommonModule } from "@angular/common";
 
@@ -24,10 +24,10 @@ export class CountriesPageComponent {
   countries: Country[] = [];
   showAddForm = false;
 
-  constructor(private countryService: CountryService) {}
+  constructor(private countriesPageService: CountriesPageService) {}
 
   ngOnInit() {
-    this.countryService
+    this.countriesPageService
       .getCountries()
       .subscribe((data) => (this.countries = data));
   }

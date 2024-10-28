@@ -2,10 +2,7 @@ import { ComponentFixture, TestBed } from "@angular/core/testing";
 
 import { ContactPageComponent } from "./contact-page.component";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
-import { HttpService } from "../../services/http.service";
-
-const imports = [ReactiveFormsModule, FormsModule];
-const providers = [HttpService];
+import { ContactPageService } from "./contact-page.service";
 
 describe("ContactPageComponent", () => {
   let component: ContactPageComponent;
@@ -13,8 +10,8 @@ describe("ContactPageComponent", () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [ContactPageComponent, ...imports],
-      providers: [providers],
+      imports: [ContactPageComponent, ReactiveFormsModule, FormsModule],
+      providers: [ContactPageService],
     }).compileComponents();
 
     fixture = TestBed.createComponent(ContactPageComponent);

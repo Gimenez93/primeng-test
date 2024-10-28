@@ -1,14 +1,13 @@
 import { TestBed } from "@angular/core/testing";
 
-import { HttpService } from "./http.service";
-import { ContactForm } from "../pages/contact-page/contact-form.model";
+import { ContactForm, ContactPageService } from "./contact-page.service";
 
-describe("HttpService", () => {
-  let service: HttpService;
+describe("ContactPageService", () => {
+  let service: ContactPageService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    service = TestBed.inject(HttpService);
+    service = TestBed.inject(ContactPageService);
   });
 
   it("should be created", () => {

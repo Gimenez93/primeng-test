@@ -16,7 +16,7 @@ export interface Country {
 @Injectable({
   providedIn: "root",
 })
-export class CountryService {
+export class CountriesPageService {
   private apiUrl = "https://restcountries.com/v3.1";
 
   constructor(private http: HttpClient) {}

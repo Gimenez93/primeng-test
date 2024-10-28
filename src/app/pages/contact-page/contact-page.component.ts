@@ -6,10 +6,10 @@ import {
   ReactiveFormsModule,
   Validators,
 } from "@angular/forms";
-import { HttpService } from "../../services/http.service";
+import { ContactPageService } from "./contact-page.service";
 
 const imports = [ReactiveFormsModule, FormsModule];
-const providers = [HttpService];
+const providers = [ContactPageService];
 
 @Component({
   selector: "contact-page",
@@ -22,7 +22,10 @@ const providers = [HttpService];
 export class ContactPageComponent {
   contactForm: FormGroup;
 
-  constructor(private fb: FormBuilder, private httpService: HttpService) {
+  constructor(
+    private fb: FormBuilder,
+    private contactPageService: ContactPageService
+  ) {
     this.contactForm = this.fb.group({
       firstName: ["", Validators.required],
       lastName: ["", Validators.required],
@@ -37,7 +40,7 @@ export class ContactPageComponent {
       return;
     }
 
-    this.httpService.sendContactForm(this.contactForm.value).subscribe({
+    this.contactPageService.sendContactForm(this.contactForm.value).subscribe({
       next: () => {
         alert("Form sent successfully");
         this.contactForm.reset();

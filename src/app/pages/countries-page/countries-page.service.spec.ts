@@ -1,6 +1,6 @@
 import { TestBed } from "@angular/core/testing";
 import { provideHttpClientTesting } from "@angular/common/http/testing";
-import { CountryService, Country } from "./country.service";
+import { CountriesPageService, Country } from "./countries-page.service";
 import { of } from "rxjs";
 import { provideHttpClient } from "@angular/common/http";
 
@@ -26,17 +26,17 @@ const expectedCountries: Country[] = [
 ];
 
 describe("CountriesPageService", () => {
-  let service: CountryService;
+  let service: CountriesPageService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
       providers: [
-        CountryService,
+        CountriesPageService,
         provideHttpClient(),
         provideHttpClientTesting(),
       ],
     });
-    service = TestBed.inject(CountryService);
+    service = TestBed.inject(CountriesPageService);
   });
 
   it("should be created", () => {

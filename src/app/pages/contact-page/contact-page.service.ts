@@ -1,11 +1,18 @@
 import { Injectable } from "@angular/core";
 import { of } from "rxjs";
-import { ContactForm } from "../pages/contact-page/contact-form.model";
+
+export interface ContactForm {
+  firstName: string;
+  lastName: string;
+  email: string;
+  message: string;
+  terms: boolean;
+}
 
 @Injectable({
   providedIn: "root",
 })
-export class HttpService {
+export class ContactPageService {
   constructor() {}
 
   sendContactForm(formData: ContactForm) {

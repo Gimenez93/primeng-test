@@ -1,7 +1,7 @@
 import { ComponentFixture, TestBed } from "@angular/core/testing";
 
 import { CountriesPageComponent } from "./countries-page.component";
-import { Country, CountryService } from "./country.service";
+import { Country, CountriesPageService } from "./countries-page.service";
 import { of } from "rxjs";
 import { By } from "@angular/platform-browser";
 import { DebugElement } from "@angular/core";
@@ -41,7 +41,7 @@ describe("CountriesPageComponent", () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [CountriesPageComponent],
-      providers: [{ provide: CountryService, useValue: serviceMock }],
+      providers: [{ provide: CountriesPageService, useValue: serviceMock }],
     }).compileComponents();
 
     fixture = TestBed.createComponent(CountriesPageComponent);
