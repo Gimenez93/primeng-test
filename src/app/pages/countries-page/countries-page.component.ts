@@ -1,11 +1,6 @@
 import { Component } from "@angular/core";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { ButtonModule } from "primeng/button";
-import { DialogModule } from "primeng/dialog";
-import { DropdownModule } from "primeng/dropdown";
-import { InputNumberModule } from "primeng/inputnumber";
-import { InputSwitchModule } from "primeng/inputswitch";
-import { InputTextModule } from "primeng/inputtext";
 import { Country, CountryService } from "./country.service";
 import { TableModule } from "primeng/table";
 import { CommonModule } from "@angular/common";

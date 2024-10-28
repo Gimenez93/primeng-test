@@ -7,7 +7,6 @@ import {
   Validators,
 } from "@angular/forms";
 import { HttpService } from "../../services/http.service";
-import { ContactForm } from "./contact-form.model";
 
 const imports = [ReactiveFormsModule, FormsModule];
 const providers = [HttpService];
