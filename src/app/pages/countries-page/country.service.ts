@@ -17,12 +17,12 @@ export interface Country {
   providedIn: "root",
 })
 export class CountryService {
-  private apiUrl = "https://restcountries.com/v3.1/all";
+  private apiUrl = "https://restcountries.com/v3.1";
 
   constructor(private http: HttpClient) {}
 
   getCountries(): Observable<Country[]> {
-    return this.http.get<any[]>(this.apiUrl).pipe(
+    return this.http.get<any[]>(`${this.apiUrl}/all`).pipe(
       map((countries) =>
         countries.map((country) => ({
           name: country.name.common,

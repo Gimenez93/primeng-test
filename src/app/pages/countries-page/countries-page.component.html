@@ -1,27 +1,33 @@
 <div class="container">
   <h1 class="page-title">Countries & Currencies</h1>
-  <a href="#" class="page-subtitle"
-    >You can easily manage your countries on this page</a
-  >
-
+  <p class="page-subtitle">You can easily manage your countries on this page</p>
+  <div class="divider"></div>
   <div class="layout">
     <div class="sidebar">
-      <button
-        pButton
-        class="p-button-primary add-country-btn"
-        (click)="showAddForm = !showAddForm"
-      >
-        {{ showAddForm ? "Hide Form" : "Add a country" }}
+      <h3>Countries</h3>
+      <p class="page-subtitle">Manage your countries in this project</p>
+      <button pButton class="p-button-primary add-country-btn">
+        Add a country
       </button>
     </div>
 
     <div class="main-content">
-      <p-table [value]="countries" [tableStyle]="{ 'min-width': '50rem' }">
+      <p-table
+        [value]="countries"
+        [tableStyle]="{ 'min-width': '50rem' }"
+        [rowsPerPageOptions]="[5, 10, 20]"
+        [paginator]="true"
+        [rows]="10"
+      >
         <ng-template pTemplate="header">
           <tr>
-            <th class="column-header-m">Country</th>
-            <th class="column-header-m">Population</th>
-            <th class="column-header-m">Continent</th>
+            <th class="column-header-m" pSortableColumn="name">Country</th>
+            <th class="column-header-m" pSortableColumn="population">
+              Population
+            </th>
+            <th class="column-header-m" pSortableColumn="continent">
+              Continent
+            </th>
             <th class="column-header-s">Status</th>
             <th class="column-header-s">Maps</th>
           </tr>
@@ -59,4 +65,6 @@
       </p-table>
     </div>
   </div>
+
+  <div class="divider"></div>
 </div>

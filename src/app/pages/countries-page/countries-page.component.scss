@@ -5,13 +5,12 @@
 }
 
 .page-title {
-  color: #1e293b;
+  color: #495057;
   margin-bottom: 0.5rem;
 }
 
 .page-subtitle {
-  color: #3b82f6;
-  text-decoration: none;
+  color: #6c757d;
   font-size: 0.9rem;
   display: block;
   margin-bottom: 2rem;
@@ -24,11 +23,7 @@
 }
 
 .sidebar {
-  padding: 1rem;
-}
-
-.add-country-btn {
-  width: 100%;
+  padding: 1rem 0 1.5rem 0;
 }
 
 .flag-container {
@@ -40,7 +35,6 @@
 .flag-img {
   width: 30px;
   height: 20px;
-  object-fit: cover;
 }
 
 .currency-code {
@@ -49,11 +43,12 @@
 }
 
 .status-icon {
-  color: #22c55e;
+  color: #00b200;
 }
 
 .maps-icon {
-  color: #3b82f6;
+  color: #586af5;
+  cursor: pointer;
 }
 
 .country-name {
@@ -67,4 +62,10 @@
 
 .column-header-s {
   width: 12.5%;
+}
+
+.divider {
+  height: 1px;
+  background-color: #e0e0e0;
+  margin: 20px 0;
 }
